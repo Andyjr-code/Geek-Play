@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geek Play - Filmes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles/MenuFilme.css">
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <!-- NAVBAR PRETO -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-footerCor fixed-top">
+      <div class="container-fluid px-4">
+  
+        <!-- Logo à esquerda -->
+        <a class="navbar-brand me-auto" href="../index.html">
+          <img id="logo" src="../assets/img/logoGeekPlay.png" alt="Logo Geek Play" style="height:40px;">
+        </a>
+  
+        <!-- Botão do menu responsivo -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Alternar navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- Menu colapsável todo à direita -->
+        <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+  
+          <!-- Barra de busca -->
+          <form class="d-flex me-3" id="form">
+            <input id="search" class="form-control" type="search" placeholder="Buscar..." aria-label="Search">
+            <button class="btn btn-outline-light ms-2" type="submit">Buscar</button>
+          </form>
+  
+          <!-- Links de navegação simplificados -->
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="./Anime.html">Animes</a></li>
+            <li class="nav-item"><a class="nav-link" href="./Mangas.html">Mangás</a></li>
+            <li class="nav-item"><a class="nav-link" href="./Filmes.html">Filmes</a></li>
+            <li class="nav-item"><a class="nav-link" id="login-link" href="./Login.html">Login</a></li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light fw-bold menu-mais" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mais
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end menu-mais-dropdown" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item text-light menu-mais-item" href="./sobre.html">Sobre</a></li>
+                <li><a class="dropdown-item text-light menu-mais-item" href="./Perfil.html">Perfil</a></li>
+                <li><a class="dropdown-item text-light menu-mais-item" href="./favoritos.html">Favoritos</a></li>
+                <li><a class="dropdown-item text-light menu-mais-item" href="./Doacoes.html">Doação</a></li>
+                <li><hr class="dropdown-divider bg-secondary"></li>
+                <li><a class="dropdown-item text-light menu-mais-item" href="#" onclick="logout()">Sair</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Categorias de Filmes -->
+  <div class="container mt-5 pt-4">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-3">
+        <h4 class="text-white">Categorias de Filmes</h4>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-light m-1" onclick="buscarFilmesPorGenero(27)">Terror</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-light m-1" onclick="buscarFilmesPorGenero(28)">Ação</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-light m-1" onclick="buscarFilmesPorGenero(35)">Comédia</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-light m-1" onclick="buscarFilmesPorGenero(10749)">Romance</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-light m-1" onclick="buscarFilmesPorGenero(878)">Ficção Científica</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-light m-1" onclick="buscarFilmesPorGenero(53)">Suspense</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-light m-1" onclick="buscarFilmesPorGenero(10752)">Guerra</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-light m-1" onclick="pegarFilmes(API_URL)">Todos</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Trailer -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Trailer e Plataformas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body" id="trailer-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <main class="flex-fill pt-5 mt-4">
+    <div class="container my-4">
+      <div class="row" id="mainFilme"></div>
+      <nav aria-label="Page navigation" class="mt-3">
+        <ul class="pagination justify-content-center" id="pagination"></ul>
+      </nav>
+    </div>
+  </main>
+
+  <div class="Container-botoes">
+    <div id="pagination" class="my-3"></div>
+    <div class="Botoes d-flex justify-content-center gap-2">
+      <button id="btnAnterior" class="btn btn-outline-light">Anterior</button>
+      <button id="btnProxima" class="btn btn-outline-light">Próxima</button>
+    </div>
+    <div id="loader" class="text-center my-4" style="display: none;">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Carregando...</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mt-auto bg-footerCor text-HeaderCor pt-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 mb-3">
+          <h5 class="text-uppercase">Sobre Nós</h5>
+          <p class="small">A Empresa Geek Play opera em múltiplos locais e enfrenta desafios de gestão de APIs…</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="text-uppercase">Links Rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a href="../index.html" class="text-white text-decoration-none">Início</a></li>
+            <li><a href="filmes.html" class="text-white text-decoration-none">Filmes</a></li>
+            <li><a href="mangas.html" class="text-white text-decoration-none">Mangás</a></li>
+            <li><a href="Anime.html" class="text-white text-decoration-none">Animes</a></li>
+            <li><a href="Doacoes.html" class="text-decoration-none text-light">Apoie-nos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3 text-end">
+          <img id="logo" src="../assets/img/logoGeekPlay.png" alt="Logo Geek Play" style="height:40px;">
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <div class="d-flex justify-content-center py-2 ">
+        <small class="text-HeaderCor ">&copy; 2025 Geek Play. Todos os direitos reservados.</small>
+      </div>
+    </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/Script/Filmes.js" ></script>
+   <script src="../assets/Script/login.js"></script>
+</body>
+</html>

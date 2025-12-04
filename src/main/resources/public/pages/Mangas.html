@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geek Play - Mangás</title>
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/6b1738a4a2.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Podkova:wght@400..800&display=swap" rel="stylesheet">
+
+  <!-- Seus estilos e scripts -->
+  <script src="../assets/Script/Manga.js"></script>
+  <link rel="stylesheet" href="../assets/styles/Anime.css">
+  <script src="../Script/menuMobile.js"></script>
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-footerCor fixed-top">
+      <div class="container-fluid px-4">
+  
+        <!-- Logo à esquerda -->
+        <a class="navbar-brand me-auto" href="../index.html">
+          <img id="logo" src="../assets/img/logoGeekPlay.png" alt="Logo Geek Play" style="height:40px;">
+        </a>
+  
+        <!-- Botão do menu responsivo -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Alternar navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- Menu colapsável todo à direita -->
+        <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+  
+          <!-- Barra de busca -->
+          <form class="d-flex me-3" id="form">
+            <input id="search" class="form-control" type="search" placeholder="Buscar..." aria-label="Search">
+            <button class="btn btn-outline-light ms-2" type="submit">Buscar</button>
+          </form>
+  
+          <!-- Links de navegação simplificados -->
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="./Anime.html">Animes</a></li>
+            <li class="nav-item"><a class="nav-link" href="./Mangas.html">Mangás</a></li>
+            <li class="nav-item"><a class="nav-link" href="./Filmes.html">Filmes</a></li>
+            <li class="nav-item"><a class="nav-link"id="login-link" href="./Login.html">Login</a></li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light fw-bold menu-mais" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mais
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end menu-mais-dropdown" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item text-light menu-mais-item" href="./sobre.html">Sobre</a></li>
+                <li><a class="dropdown-item text-light menu-mais-item" href="./Perfil.html">Perfil</a></li>
+                <li><a class="dropdown-item text-light menu-mais-item" href="./favoritos.html">Favoritos</a></li>
+                <li><a class="dropdown-item text-light menu-mais-item" href="./Doacoes.html">Doação</a></li>
+                <li><hr class="dropdown-divider bg-secondary"></li>
+                <li><a class="dropdown-item text-light menu-mais-item" href="#" onclick="logout()">Sair</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container-fluid">
+      <div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../assets/img/Sung-Jin-Woo.jpg" class="d-block w-100" alt="Solo Leveling">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>ソロレベルアップ</h3>
+              <h2>TOP 1 MANHWA</h2>
+              <h3>SOLO LEVELING</h3>
+              <h3>MANHWA</h3>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img/TheBig.jpg" class="d-block w-100" alt="Bleach">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>終わりの後の始まり</h3>
+              <h2>TOP 2 MANHWA</h2>
+              <h3>THE BEGINNING AFTER THE END</h3>
+              <h3>MANHWA</h3>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img/SoloRagnarok.webp" class="d-block w-100" alt="Solo Leveling Ragnarok">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>ソロレベルアップラグナロク</h3>
+              <h2>TOP 3 MANHWA</h2>
+              <h3>SOLO LEVELING RAGNAROK</h3>
+              <h3>MANHWA</h3>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img/theFall.jpg" class="d-block w-100" alt="The World After the Fall">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>堕落後の世界</h3>
+              <h2>TOP 4 MANHWA</h2>
+              <h3>THE WORLD AFTER THE FALL</h3>
+              <h3>MANHWA</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainSlider" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainSlider" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+
+      <!-- Categorias de Mangás -->
+      <div class="container mt-4">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center mb-3">
+            <h4 class="text-white">Categorias de Mangás</h4>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-light m-1" onclick="buscarMangas('')">Todos</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-light m-1" onclick="buscarMangas('shounen')">Shounen</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-light m-1" onclick="buscarMangas('seinen')">Seinen</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-light m-1" onclick="buscarMangas('yaoi')">Yaoi</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-light m-1" onclick="buscarMangas('acao')">Ação</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-light m-1" onclick="buscarMangas('comedia')">Comédia</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-title"></div>
+      <div class="main-title-toppage">
+        <h1 class="pipe">| </h1>
+      </div>
+
+      <!-- Cards -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="container-card">
+            <div class="row" id="anime-cards-container">
+              <!-- Cards dinâmicos serão inseridos via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filtro e Paginação -->
+      <div class="Container-botoes">
+        <div id="pagination" class="my-3"></div>
+        <div class="Botoes d-flex justify-content-center gap-2">
+          <button id="btnAnterior" class="btn btn-outline-light">Anterior</button>
+          <button id="btnProxima" class="btn btn-outline-light">Próxima</button>
+        </div>
+        <!-- Loader -->
+        <div id="loader" class="text-center my-4" style="display: none;">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Carregando...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-footerCor text-HeaderCor pt-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 mb-3">
+          <h5 class="text-uppercase">Sobre Nós</h5>
+          <p class="small">A Empresa Geek Play opera em múltiplos locais e enfrenta desafios de gestão de APIs…</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="text-uppercase">Links Rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a href="../index.html" class="text-white text-decoration-none">Início</a></li>
+            <li><a href="filmes.html" class="text-white text-decoration-none">Filmes</a></li>
+            <li><a href="mangas.html" class="text-white text-decoration-none">Mangás</a></li>
+            <li><a href="Anime.html" class="text-white text-decoration-none">Animes</a></li>
+            <li><a href="Doacoes.html" class="text-decoration-none text-light">Apoie-nos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3 text-end">
+          <img id="logo" src="../assets/img/logoGeekPlay.png" alt="Logo Geek Play" style="height:40px;">
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <div class="d-flex justify-content-center py-2">
+        <small class="text-HeaderCor">&copy; 2025 Geek Play. Todos os direitos reservados.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="../assets/Script/login.js"></script>
+</body>
+</html>

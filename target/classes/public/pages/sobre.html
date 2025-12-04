@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geek Play - Sobre</title>
+  <link rel="stylesheet" href="../Estilos/global.css">
+
+  <!-- Apenas Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../assets/styles/Sobre.css">
+  <script src="../Script/menuMobile.js" defer></script>
+
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Podkova:wght@400..800&display=swap" rel="stylesheet">
+
+  <!--Bootstrap Script-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/6b1738a4a2.js" crossorigin="anonymous"></script>
+
+  <!--Progess bar-->
+  <script src="./progessnav.js"></script>
+
+  <!--parallax-->
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container" id="nav-container">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand me-auto" href="../index.html">
+          <img id="logo" src="../assets/img/logoGeekPlay.png" alt="Logo Geek Play" style="height:40px;">
+        </a>
+
+        <!-- Corrigido para Bootstrap 5 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links"
+          aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+          <div class="navbar-nav">
+            <a href="../pages/Anime.html" class="nav-item nav-link" id="anime-menu">Animes</a>
+            <a href="../pages/Filmes.html" class="nav-item nav-link" id="contact-menu">Filme</a>
+            <a href="../pages/Mangas.html" class="nav-item nav-link" id="contact-menu">Manga</a>
+            <a href="../pages/Login.html" class="nav-item nav-link" id="login-link">Login</a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Mais
+
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end  bg-footerCor border-secondary 20px "
+              aria-labelledby="dropdownMenuLink">
+              <li class="nav-item"><a class="dropdown-item    " href="./sobre.html">Sobre</a></li>
+              <li class="nav-item"><a class="dropdown-item   " href="./Perfil.html">Perfil</a></li>
+              <li class="nav-item"><a class="dropdown-item   " href="./favoritos.html">Favoritos</a></li>
+              <li class="nav-item"><a class="dropdown-item   " href="./Doacoes.html">Doação</a></li>
+              <li class="nav-item"><a class="dropdown-item   " href="#" onclick="logout()">Sair</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div>
+      <!-- Img -->
+      <img Class="Geek" src="../assets/img/GEEKPLAY.png">
+      <h1>
+        <div class="sobre_nos"><h1>Sobre</h1></div>
+      </h1>
+      <h2>
+        <div class="geekplay"><h2>GEEKPLAY</h2></div>
+      </h2>
+      
+      <p class="paragrafo_s">A Geek Play nasceu da paixão pelo universo nerd e da vontade de reunir, em um só lugar, tudo o que os fãs de cultura pop amam. Somos uma plataforma feita de nerds para nerds, criada com o propósito de facilitar o acesso a informações sobre filmes, animes, mangás e manhwas, de forma organizada, atualizada e com muito carinho.
+
+        Nosso objetivo é conectar pessoas apaixonadas por histórias incríveis, personagens marcantes e mundos fantásticos. Aqui, você pode explorar, listar e organizar suas obras favoritas, além de descobrir novas indicações, acompanhar lançamentos e mergulhar ainda mais fundo nesse universo que tanto nos inspira.
+        
+        Mais do que um site, a Geek Play é uma comunidade. Um espaço seguro, acolhedor e feito sob medida para quem vibra com um bom enredo, uma arte envolvente ou aquela reviravolta épica.
+        
+        Seja muito bem-vindo(a)!
+        Prepare sua lista, atualize seu perfil e venha fazer parte dessa jornada com a gente.</p>
+    </div>
+  </main>
+  <!-- FOOTER -->
+  <footer class="footer bg-black text-white pt-4 mt-auto">
+    <div class="container-footer">
+      <div class="row text-start align-items-start">
+        <!-- Sobre Nós -->
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase fw-bold">SOBRE NÓS</h5>
+          <p class="small text-white">
+            A Empresa Geek Play opera em múltiplos locais e enfrenta desafios de gestão de APIs...
+          </p>
+        </div>
+        <!-- Links Rápidos + Direitos Autorais -->
+        <div class="col-md-4 mb-4 text-center d-flex flex-column align-items-center">
+          <h5 class="text-uppercase fw-bold">LINKS RÁPIDOS</h5>
+          <ul class="list-unstyled" id="link-footer">
+            <li><a href="../index.html" class="text-white text-decoration-none">Início</a></li>
+            <li><a href="filmes.html" class="text-white text-decoration-none">Filmes</a></li>
+            <li><a href="mangas.html" class="text-white text-decoration-none">Mangás</a></li>
+            <li><a href="Anime.html" class="text-white text-decoration-none">Animes</a></li>
+            <li><a href="./Doacoes.html" class="text-decoration-none text-light">Apoie-nos</a></li>
+          </ul>
+          <hr class="border-secondary w-100 my-3">
+          <small class="d-block">&copy; 2025 Geek Play. Todos os direitos reservados.</small>
+        </div>
+        <!-- Logo -->
+        <div class="col-md-4 d-flex justify-content-md-end justify-content-center mb-4">
+          <img src="../assets/img/logoGeekPlay.png" alt="Logotipo da empresa Geek Play"
+            class="me-md-5" style="height:40px;">
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/Script/doacoes.js"></script>
+</body>
+
+</html>

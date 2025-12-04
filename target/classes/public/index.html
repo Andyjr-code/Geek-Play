@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geek Play - Home</title>
+
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/6b1738a4a2.js" crossorigin="anonymous"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Podkova:wght@400..800&display=swap" rel="stylesheet">
+<!-- Estilos personalizados -->
+<link rel="stylesheet" href="./assets/styles/global.css">
+<link rel="stylesheet" href="./assets/styles/Mangas.css">
+<!-- Bootstrap 5.3.3 JS -->
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container" id="nav-container">
+          <nav class="navbar navbar-expand-lg fixed-top">
+            <a href="" class="navbar-brand">
+              <img id="logo" src="./assets/img/Logo_Lateral_geekplay.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links"
+              aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+              <div class="navbar-nav">
+      
+                <a href="./pages/Anime.html" class="nav-item nav-link">Animes</a>             
+                <a href="./pages/Filmes.html" class="nav-item nav-link">Filme</a>
+                <a href="./pages/Mangas.html" class="nav-item nav-link">Manga</a>
+                <a href="./pages/Login.html" id="login-link" class="nav-item nav-link">Login</a>
+              
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mais  
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end bg-black " aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item bg-black" href="./pages/sobre.html">Sobre</a></li>
+                    <li><a class="dropdown-item bg-black" href="./pages/Perfil.html">Perfil</a></li>        
+                    <li><a class="dropdown-item bg-black" href="./pages/favoritos.html">Favoritos</a></li>
+                    <li><a class="dropdown-item bg-black" href="./pages/Doacoes.html">Doação</a></li>
+                    <li><a class="dropdown-item bg-black" href="#" onclick="logout()">Sair</a></li>
+                    
+                  </ul>
+               
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+    <!-- carousel -->
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+            <div class="item">
+
+                <img src="./assets/img/BleachFundo.jpg">
+                <div class="content">
+                    <div class="author">Geek Play</div>
+                    <div class="title">BLEACH</div>
+                    <div class="topic">ANIME</div>
+                    <div class="des">
+                        <!-- lorem 50 -->
+                        Um adolescente que ganha poderes de Shinigami (Ceifador de Almas) para proteger o mundo dos mortos-vivos chamados Hollows. Ele luta entre o mundo humano e o espiritual, enfrentando inimigos poderosos e descobrindo segredos sobre seu próprio passado.</div>
+                        <button type="button"  data-bs-toggle="modal" id="button-trailer" data-bs-target="#videoModal">
+                              Mostrar Trailer
+                   </button>
+                </div>
+            </div>
+            <!-- Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">Trailer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/fuwPuimFQkY?enablejsapi=1" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+            <div class="item">
+                <img src="./assets/img/jouker.jpg">
+                <div class="content">
+                    <div class="author">Geek Play</div>
+                    <div class="title">JOKER</div>
+                    <div class="topic">FILME</div>
+                    <div class="des">
+                      Conta a história de Arthur Fleck, um homem com transtornos mentais que é maltratado pela sociedade. Após sofrer várias rejeições e injustiças, ele enlouquece e se transforma no Coringa, um símbolo do caos em Gotham City.</div>
+                <button type="button"  data-bs-toggle="modal" id="button-trailer" data-bs-target="#videoModal-2">
+                              Mostrar Trailer
+                   </button>
+                    </div>
+            </div>
+            <!-- Modal -->
+<div class="modal fade" id="videoModal-2" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">Trailer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/MjjPIPh6aXQ" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+            <div class="item">
+                <img src="./assets/img/theFall.jpg">
+                <div class="content">
+                    <div class="author">Geek Play</div>
+                    <div class="title">The World Afther The Fall</div>
+                    <div class="topic">MANHWA</div>
+                    <div class="des">
+                        Jaehwan, um dos poucos humanos que se recusam a fugir após o colapso do mundo. Em vez disso, ele enfrenta sozinho os perigos da Torre, determinado a descobrir a verdade por trás daquele sistema misterioso e lutar contra um destino imposto.</div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="./assets/img/Solo.jpg">
+                <div class="content">
+                    <div class="author">Geek Play</div>
+                    <div class="title">SOLO LEVELING</div>
+                    <div class="topic">ANIME</div>
+                    <div class="des">
+                      O caçador mais fraco do mundo, que um dia ganha a habilidade de evoluir infinitamente ao completar missões como em um jogo. Com esse poder, ele se torna incrivelmente forte e enfrenta monstros, caçadores e segredos sombrios que ameaçam o mundo.
+                    </div>
+                    <button type="button"  data-bs-toggle="modal" id="button-trailer" data-bs-target="#videoModal-3">
+                              Mostrar Trailer
+                   </button>
+                </div>
+            </div>
+            <!-- Modal -->
+<div class="modal fade" id="videoModal-3" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">Trailer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/MWrsQmBIkhM" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+            <div class="item">
+              <img src="./assets/img/jon.jpg">
+              <div class="content">
+                  <div class="author">Geek Play</div>
+                  <div class="title">Jon Wick Parabellum</div>
+                  <div class="topic">FILME</div>
+                  <div class="des">
+                    John Wick após ser declarado excomungado por matar dentro do Continental, um hotel neutro para assassinos. Com uma recompensa milionária por sua cabeça, ele precisa enfrentar inúmeros inimigos enquanto tenta encontrar uma forma de sobreviver e se libertar das regras da Alta Cúpula.</div>
+                  <button type="button"  data-bs-toggle="modal" id="button-trailer" data-bs-target="#videoModal-4">
+                              Mostrar Trailer
+                   </button>
+                </div>
+          </div>
+        </div>
+        <!-- Modal -->
+<div class="modal fade" id="videoModal-4" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">Trailer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/CcQpYEcZXaU" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="./assets/img/Bleach.jpg">
+                <div class="content">
+                    <div class="title">
+                     
+                    </div>
+                    <div class="description">
+                 
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="./assets/img/MiniJoker.jpg">
+                <div class="content">
+                    <div class="title">
+                      
+                    </div>
+                    <div class="description">
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="./assets/img/TheWorldFall.jpg">
+                <div class="content">
+                    <div class="title">
+                      
+                    </div>
+                    <div class="description">
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="./assets/img/Solo-leveling.jpg">
+                <div class="content">
+                    <div class="title">
+                      
+                    </div>
+                    <div class="description">
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+              <img src="./assets/img/John_Wick3_Parabellum_.jpg">
+              <div class="content">
+                  <div class="title">
+                     
+                  </div>
+                  <div class="description">
+                    
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+
+    <!-- FOOTER -->
+  <footer class="mt-auto bg-footerCor text-HeaderCor pt-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 mb-3">
+          <h5 class="text-uppercase">Sobre Nós</h5>
+          <p class="small">A Empresa Geek Play opera em múltiplos locais e enfrenta desafios de gestão de APIs…</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="text-uppercase">Links Rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a href="./index.html" class="text-decoration-none text-light">Início</a></li>
+            <li><a href="./pages/Doacoes.html" class="text-decoration-none text-light">Apoie-nos</a></li>
+            <li><a href="./pages/Filmes.html" class="text-decoration-none text-light">Filmes</a></li>
+            <li><a href="./pages/Mangas.html" class="text-decoration-none text-light">Mangás</a></li>
+            <li><a href="./pages/Anime.html" class="text-decoration-none text-light">Animes</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3 text-end">
+          <img id="logo" src="./assets/img/logoGeekPlay.png" alt="Logo Geek Play" style="height:40px;">
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <div class="d-flex justify-content-center py-2 ">
+        <small class="text-HeaderCor ">&copy; 2025 Geek Play. Todos os direitos reservados.</small>
+      </div>
+    </div>
+  </footer>
+
+    <script src="./assets/Script/index.js"></script>
+    <script src="./assets/Script/login.js"></script>
+    <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

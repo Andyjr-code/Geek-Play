@@ -1,0 +1,461 @@
+
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Linhas duplicadas removidas abaixo, apenas a primeira ocorrência é mantida */
+    /* width: 100rem; /* Esta largura fixa pode causar problemas em telas menores */ 
+    max-width: 100%; /* Garante que o header não ultrapasse a largura da tela */
+    margin: auto; /* Centraliza o cabeçalho se 'width' for menor que 100% */
+    height: 3.125rem;
+    position: relative; /* Reafirmado para consistência, se não estiver já no header principal */
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: #0c0c0c;
+    letter-spacing: 0.0625rem;
+    font-weight: 800;
+    margin-top: 5rem;
+    margin-right: 5.625rem;
+}
+
+.nav {
+    color: #870303;
+    display: flex;
+}
+
+.nav li {
+    list-style-type: none;
+    margin: 0 0.625rem;
+}
+
+.nav li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.0625rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav li:hover a {
+    color: var(--primary); /* Certifique-se de que --primary está definido */
+}
+
+
+.Rodape {
+    color: rgb(255, 255, 255);
+    font-size: 0.625rem;
+}
+
+.paragrafo_rodape {
+    text-decoration: none;
+    color: white;
+    font-size: 0.625rem;
+}
+
+/* O segundo 'a' com text-decoration: none; está duplicado, removi o outro */
+
+
+.carousel {
+    height: 100vh;
+    margin-top: -3.125rem;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel .list .item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+}
+
+.carousel .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .list .item .content {
+    position: absolute;
+    top: 20%;
+    width: 71.25rem;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 18.75%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 0.3125rem 0.625rem #0004;
+}
+
+.carousel .list .item .author {
+    font-weight: bold;
+    letter-spacing: 0.625rem;
+}
+
+.carousel .list .item .title,
+.carousel .list .item .topic {
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+
+.carousel .list .item .topic {
+    color: #f1683a;
+}
+
+.carousel .list .item .buttons {
+    display: grid;
+    /* MODIFICAÇÃO AQUI: Ajuste a largura das colunas do grid para ser mais flexível */
+    grid-template-columns: repeat(2, auto); /* 'auto' permite que o grid se ajuste ao conteúdo */
+                                          /* Ou, se precisar de um tamanho mínimo: repeat(2, minmax(8.125rem, auto)); */
+    grid-template-rows: 2.5rem;
+    gap: 0.3125rem;
+    margin-top: 1.25rem;
+}
+
+.carousel .list .item .buttons button {
+    border: none;
+    background-color: #eee;
+    letter-spacing: 0.1875rem;
+    font-family: Poppins;
+    font-weight: 500;
+    /* Adicionado para evitar quebra de linha indesejada */
+    white-space: nowrap;
+}
+
+.thumbnail {
+    position: absolute;
+    bottom: 3.125rem; /* 50px */
+    left: 50%;
+    transform: translateX(-50%); /* Adicionado para centralizar a thumbnail corretamente */
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.thumbnail .item {
+    width: 9.375rem;
+    height: 13.75rem;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.25rem;
+}
+
+.thumbnail .item .content {
+    color: #fff;
+    position: absolute;
+    bottom: 0.625rem;
+    left: 0.625rem;
+    right: 0.625rem;
+}
+
+.thumbnail .item .content .title {
+    font-weight: 500;
+}
+
+.thumbnail .item .content .description {
+    font-weight: 300;
+}
+
+/* Estilos para o contêiner das setas de navegação */
+.arrows {
+    position: absolute;
+    top: auto;
+    bottom: 140px;
+    width: 100%;
+    /*  Ajuste o padding para aproximar das bordas */
+    padding: 0 30px; 
+    box-sizing: border-box;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Os estilos para .arrows button e .arrows button:hover permanecem os mesmos */
+.arrows button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrows button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.carousel .list .item:nth-child(1) {
+    z-index: 1;
+}
+
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttons {
+    transform: translateY(3.125rem);
+    filter: blur(1.25rem);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+ /* Estilo personalizado para el contenedor del video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        #videoModal,
+        #videoModal-2,
+        #videoModal-3,
+        #videoModal-4{
+            margin-top: 160px;
+        }
+        
+        .modal-content{
+            background-color: rgb(37, 35, 35);
+        }
+        
+        #videoModalLabel{
+            color: white;
+        }
+
+        #button-trailer{
+            background-color: #eee4;
+            color: white;
+            border-radius: 10px;
+            width: 150px;
+            height: 40px;
+            margin-top: 30px;
+        }
+        #button-trailer:hover{
+            background-color: white;
+            color: black;
+        }
+        
+
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.carousel .list .item:nth-child(1) .content .title {
+    animation-delay: 1.2s !important;
+}
+
+.carousel .list .item:nth-child(1) .content .topic {
+    animation-delay: 1.4s !important;
+}
+
+.carousel .list .item:nth-child(1) .content .des {
+    animation-delay: 1.6s !important;
+}
+
+.carousel .list .item:nth-child(1) .content .buttons {
+    animation-delay: 1.8s !important;
+}
+
+.carousel.next .list .item:nth-child(1) img {
+    width: 9.375rem;
+    height: 13.75rem;
+    position: absolute;
+    bottom: 3.125rem;
+    left: 50%;
+    border-radius: 1.875rem;
+    animation: showImage 0.5s linear 1 forwards;
+}
+
+@keyframes showImage {
+    to {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1) {
+    overflow: hidden;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+@keyframes showThumbnail {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+.carousel.prev .list .item img {
+    z-index: 100;
+}
+
+@keyframes outFrame {
+    to {
+        width: 9.375rem;
+        height: 13.75rem;
+        bottom: 3.125rem;
+        left: 50%;
+        border-radius: 1.25rem;
+    }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1) {
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.carousel.next .arrows button,
+.carousel.prev .arrows button {
+    pointer-events: none;
+}
+
+.carousel.prev .list .item:nth-child(2) .content .author,
+.carousel.prev .list .item:nth-child(2) .content .title,
+.carousel.prev .list .item:nth-child(2) .content .topic,
+.carousel.prev .list .item:nth-child(2) .content .des,
+.carousel.prev .list .item:nth-child(2) .content .buttons {
+    animation: contentOut 1.5s linear 1 forwards !important;
+}
+
+@keyframes contentOut {
+    to {
+        transform: translateY(-9.375rem);
+        filter: blur(1.25rem);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 42.25rem) {
+    .carousel .list .item .content {
+        padding-right: 0;
+    }
+
+    .carousel .list .item .content .title {
+        font-size: 1.875rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    footer .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    footer .text-md-end {
+        text-align: center !important;
+    }
+
+    footer ul {
+        padding-left: 0;
+        list-style-type: none;
+    }
+
+    footer li {
+        margin-bottom: 8px;
+    }
+}
+
+
+header,
+.navbar {
+    background-color: black;
+}
+
+#nav-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#logo {
+    width: 7.8125rem; /* 125px */
+}
+
+.navbar-brand {
+    padding: 0;
+    color: white;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+#navbar-links a {
+    color: #fff;
+    cursor: pointer;
+}
+
+#navbar-links a:hover,
+#navbar-links a .active,
+#anime-menu:active {
+    color: red;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 1rem 0.8rem;
+}
+
+/* ========== NAVBAR RESPONSIVA ========== */
+.navbar-toggler {
+    padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.hidden {
+    display: none !important;
+}
+
